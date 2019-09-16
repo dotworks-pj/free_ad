@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FreeAd管理画面</title>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <%= stylesheet_link_tag 'admin', media: 'all' %>
+  <%= javascript_pack_tag 'admin' %>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+<body class="hold-transition login-page">
+<section class="content">
+  <div class="row">
+    <div class="login-box">
+      <div class="login-logo">
+        <a href="#"><b>FreeAd</b><br>管理画面</a>
+      </div>
+      <div class="login-box-body">
+        <% flash.each do |type, message| %>
+          <div class="alert <%= alert_class_for(type) %> alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <%= message %>
+          </div>
+        <% end %>
+        <%= yield %>
+        <%= render "admin/admin_users/shared/links" %>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
