@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :admin_users, path: :admin, controllers: {
-    sessions: 'admin/admin_users/sessions'
+    sessions: 'admin/admin_users/sessions',
+    passwords: 'admin/admin_users/passwords'
   }
 end
