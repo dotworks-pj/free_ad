@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FreeAd</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
-  </head>
-
+  <%= render 'partials/head' %>
   <body>
+    <%= render 'partials/header' %>
+    <% if notice.present? %>
+      <div class="alert alert-success" role="alert">
+        <div class="container">
+          <div class="alert-icon">
+            <i class="now-ui-icons ui-2_like"></i>
+          </div>
+          <%= notice %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">
+                        <i class="now-ui-icons ui-1_simple-remove"></i>
+                      </span>
+          </button>
+        </div>
+      </div>
+    <% end %>
+    <% if alert.present? %>
+      <div class="alert alert-danger" role="alert">
+        <div class="container">
+          <div class="alert-icon">
+            <i class="now-ui-icons objects_support-17"></i>
+          </div>
+          <%= alert %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">
+                        <i class="now-ui-icons ui-1_simple-remove"></i>
+                      </span>
+          </button>
+        </div>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

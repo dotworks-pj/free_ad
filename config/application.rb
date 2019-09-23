@@ -37,7 +37,7 @@ module FreeAd
       g.javascripts false
       g.stylesheets false
       g.helper false
-      g.test_framework :rspec, view_specs: false, routing_specs: false, fixture: true
+      g.test_framework :rspec, view_specs: false, routing_specs: false, controller_specs: false, fixture: true
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
   end
