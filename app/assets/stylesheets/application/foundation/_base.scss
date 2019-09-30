@@ -1,0 +1,142 @@
+$sp: 767px;  // スマホの横幅
+
+@mixin sp-width {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.sp{
+  display: none !important;
+}
+
+// スマホ
+@include sp-width  {
+  .pc{
+    display: none !important;
+  }
+  .sp{
+    display: block !important;
+  }
+}
+
+
+body{
+  background-color: $bg-gray;
+}
+
+img{
+  max-width: 100%;
+}
+
+*{
+  word-wrap:break-word;
+}
+
+a{
+  color: $primary-color;
+  &:hover{
+    color: $primary-color;
+    text-decoration: none;
+  }
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1{
+  margin: 0;
+}
+
+h3{
+  font-size: 23px;
+  margin: 20px 0 40px;
+  text-align: center;
+}
+
+.h4, h4 {
+  font-size: 1.2rem;
+}
+
+p{
+  margin: 0;
+}
+
+section{
+  margin: 30px 0;
+  padding: 30px 0;
+}
+
+
+.wrapper{
+  min-height: calc( 100vh - 96px );
+  margin-top: 0;
+}
+
+.bg-success {
+  background-color: #13A9B8!important;
+}
+
+.btn-success {
+  color: #fff;
+  border-color: #13A9B8;
+  background-color: #13A9B8;
+  box-shadow: none;
+}
+.btn-outline-info{
+  background-color: #fff;
+}
+
+.alert{
+  margin-bottom: 0;
+}
+
+.main .section:first-child{
+  padding-top: 50px;
+}
+
+.spacer{
+  height: 0;
+}
+
+.card-img-top, .card {
+  border-radius: 0;
+}
+
+.btn-info a{
+  color: #fff;
+}
+
+.card-list{
+  .row > div{
+    margin-bottom: 20px;
+    .card{
+      height: 100%;
+      box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.14);
+    }
+  }
+  .card-body{
+    padding: 10px;
+    display: flex;
+    .seller-profile{
+      margin-right: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .seller-profile_img{
+      width: 35px;
+      border-radius: 20px;
+    }
+    .card-title{
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+    .item-detail_price{
+      font-size: 12px;
+    }
+  }
+}

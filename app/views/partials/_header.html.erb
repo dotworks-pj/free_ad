@@ -1,15 +1,62 @@
 <header>
   <!-- Navbar -->
-  <% if user_signed_in? %>
-    <p>
-      <%= link_to "#{current_user.email}", "#" %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    </p>
-  <% else %>
-    <p>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    </p>
-  <% end %>
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+    <div class="container">
+      <h1>
+        <%= link_to root_path, class: 'navbar-brand' do %>
+          <%= image_tag("logo.png", class: "") %>
+        <% end %>
+      </h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown-3" aria-controls="navbarNavDropdown-3"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown-3">
+        <ul class="navbar-nav mr-auto">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "#", class: 'nav-link' do %>
+                <%= current_user.email %>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
+                ログアウト
+              <% end %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <button class="btn btn-outline-info">広告を貼りたい</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-outline-info">場所を提供する</button>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_user_registration_path, class: 'nav-link' do %>
+                新規登録
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_user_session_path, class: 'nav-link' do %>
+                ログイン
+              <% end %>
+            </li>
+          <% end %>
+
+          <!--          <li class="nav-item dropdown">-->
+          <!--            <a class="nav-link dropdown-toggle" href="https://designrevision.com" id="navbarDropdownMenuLink-3" data-toggle="dropdown"-->
+          <!--               aria-haspopup="true" aria-expanded="false">-->
+          <!--              Services-->
+          <!--            </a>-->
+          <!--            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink-3">-->
+          <!--              <a class="dropdown-item" href="#">Design</a>-->
+          <!--              <a class="dropdown-item" href="#">Development</a>-->
+          <!--              <a class="dropdown-item" href="#">Marketing</a>-->
+          <!--            </div>-->
+          <!--          </li>-->
+        </ul>
+      </div>
+    </div>
+  </nav>
   <!-- End Navbar -->
 </header>

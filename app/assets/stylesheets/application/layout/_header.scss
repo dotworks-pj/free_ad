@@ -1,0 +1,45 @@
+header{
+  border-bottom:1px solid $primary-color;
+  background-color: #fff;
+
+  .navbar {
+    justify-content: space-between;
+
+    .navbar-brand {
+      margin: 0;
+      padding: 0;
+
+      a {
+        margin: 0;
+      }
+    }
+
+    h1 {
+      display: flex;
+      align-items: center;
+      img {
+        width: 160px;
+      }
+    }
+    .navbar-toggler {
+      color: $primary-color;
+      border-color: $primary-color;
+      background-color: $primary-color;
+    }
+    .nav-link {
+      color: $primary-color !important;
+    }
+
+    .nav-item {
+      margin-right: 10px;
+
+      .btn-outline-info {
+        border-color: $primary-color;
+        color: $primary-color;
+      }
+    }
+  }
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+}
