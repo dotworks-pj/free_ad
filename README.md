@@ -1,24 +1,102 @@
-# README
+# FreeAd(仮)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby version
+2.6.3
 
-Things you may want to cover:
+## System dependencies
+Rails 6.0.0
 
-* Ruby version
+mysql 5.7系
 
-* System dependencies
+## 事前準備
 
-* Configuration
+```sh
+$ git clone https://github.com/dotworks-pj/free_ad
+$ cd free_ad
+```
 
-* Database creation
+## yarnのインストール
 
-* Database initialization
+```sh
+$ brew install yarn
+```
 
-* How to run the test suite
+## Rubyのインストール
 
-* Services (job queues, cache servers, search engines, etc.)
+インストール可能なRubyバージョンを確認
 
-* Deployment instructions
+```sh
+$ rbenv install --list
+```
 
-* ...
+2.6.3を入れる
+
+```sh
+$ rbenv install 2.6.3
+```
+
+インストールされていることを確認
+
+```sh
+$ rbenv version
+2.6.3
+```
+
+MySQLがインストールされていない場合はインストール
+
+```sh
+$ brew install mysql
+$ xcode-select --install
+```
+
+Bundlerでgemをインストール
+
+```sh
+$ gem install bundler
+$ bundle install --path vendor/bundle
+```
+
+パッケージをインストール
+
+```
+$ yarn install
+```
+
+MySQLが起動していなければ起動
+
+```sh
+mysql.server start
+```
+
+データベースの初期化
+
+```sh
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
+```
+
+Puma起動
+
+```sh
+$ ./bin/rails s -p 3000
+```
+
+## アクセス
+
+ブラウザで以下のURLにアクセスします
+
+トップページ
+>http://localhost:3000
+
+
+管理画面
+>http://localhost:3000/admin
+
+
+```
+admin@example.com
+```
+
+passwordは `password` でログイン可能
+
+
