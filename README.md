@@ -92,6 +92,8 @@ $ ./bin/rails s -p 3000
 管理画面
 >http://localhost:3000/admin
 
+letter_opener
+>http://localhost:3000/letter_opener
 
 ```
 admin@example.com
