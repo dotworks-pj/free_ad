@@ -1,0 +1,20 @@
+<div class="mypage_contents col-md-8">
+  <div class="put">
+    <h3><%= @post.name %></h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div>
+          料金: <%= number_to_currency @post.charge %>
+        </div>
+
+        <div>
+          ステータス: <%= @post.status %>
+        </div>
+
+        <div>
+          本文: <%= simple_format @post.description %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

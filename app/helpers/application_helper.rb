@@ -7,4 +7,8 @@ module ApplicationHelper
       notice: 'alert-info'
     }[flash_type.to_sym] || flash_type.to_s
   end
+
+  def is_active?(path)
+    request.path == path
+  end
 end

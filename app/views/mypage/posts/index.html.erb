@@ -1,0 +1,25 @@
+<div class="mypage_contents col-md-8">
+  <div class="mypage-posts">
+    <h3>マイ場所一覧</h3>
+    <% @posts.each do |post| %>
+      <div class="post">
+        <div class="row">
+          <div class="col-md-9">
+            <h4>
+              <%= link_to(edit_mypage_post_path(post) ,class: "col-md-3") do %>
+                <%= post.name %>
+              <% end %>
+            </h4>
+            <div>
+              料金（１週間あたり） : <%= number_to_currency post.charge %>
+            </div>
+            <div>
+              ステータス: <%= post.status %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to 'New', new_mypage_post_path(@post) %>
+  </div>
+</div>
