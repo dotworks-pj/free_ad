@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     root 'root#index'
   end
 
+  namespace :mypage do
+    root 'root#index'
+    resources :posts, except: [:destroy]
+  end
+
   devise_for :admin_users, path: :admin, controllers: {
     sessions: 'admin/admin_users/sessions',
     passwords: 'admin/admin_users/passwords'

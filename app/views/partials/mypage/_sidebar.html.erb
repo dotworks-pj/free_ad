@@ -1,0 +1,25 @@
+<div class="sidebar col-md-4">
+  <ul class="menu-list">
+    <li class="<%= 'is-active' if is_active?('#') %>">
+      <%= link_to '自社プロフィール', '#' %>
+    </li>
+    <li class="<%= 'is-active' if is_active?(new_mypage_post_path) %>">
+      <%= link_to '投稿する', new_mypage_post_path %>
+    </li>
+    <li class="<%= 'is-active' if is_active?(mypage_posts_path) %>">
+      <%= link_to '投稿履歴', mypage_posts_path %>
+    </li>
+    <li class="<%= 'is-active' if is_active?('#') %>">
+      <%= link_to '売上確認', '#' %>
+    </li>
+    <li class="<%= 'is-active' if is_active?('#') %>">
+      <%= link_to '会員情報変更', '#' %>
+    </li>
+    <li class="<%= 'is-active' if is_active?('#') %>">
+      <%= link_to 'メールアドレス変更', '#' %>
+    </li>
+    <li class="<%= 'is-active' if is_active?('#') %>">
+      <%= link_to 'パスワード変更', '#' %>
+    </li>
+  </ul>
+</div>
