@@ -1,4 +1,4 @@
-class Post < ApplicationRecord
+class Space < ApplicationRecord
   belongs_to :user
 
   enum status: { closed: 0, published: 1 }

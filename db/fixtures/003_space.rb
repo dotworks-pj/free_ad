@@ -1,7 +1,7 @@
 raise StandardError, 'production環境では利用できません' if Rails.env.production?
 
 # itemの作成
-Post.seed(
+Space.seed(
   :id,
   {
     id: 1,
@@ -95,7 +95,7 @@ Post.seed(
   }
 )
 
-published_posts = (1..5).map do |index|
+published_spaces = (1..5).map do |index|
   {
     id: 10 + index,
     user: User.find(1),
@@ -107,14 +107,14 @@ published_posts = (1..5).map do |index|
   }
 end
 
-Post.seed(
+Space.seed(
 
-  :id, published_posts
+  :id, published_spaces
 )
 
-closed_posts = (1..5).map do |index|
+closed_spaces = (1..5).map do |index|
   {
-    id: 16 + index,
+    id: 15+ index,
     user: User.find(3),
     name: "非公開の商品#{index}",
     description: '非公開の商品です',
@@ -124,6 +124,6 @@ closed_posts = (1..5).map do |index|
   }
 end
 
-Post.seed(
-  :id, closed_posts
+Space.seed(
+  :id, closed_spaces
 )
