@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Mypage::Posts", type: :request do
-  describe "GET /mypage/posts" do
+RSpec.describe "Mypage::Spaces", type: :request do
+  describe "GET /mypage/spaces" do
     it "works! (now write some real specs)" do
-      get mypage_posts_index_path
+      get mypage_spaces_index_path
       expect(response).to have_http_status(200)
     end
   end

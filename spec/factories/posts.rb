@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :post do
+  factory :space do
     user { nil }
     name { "MyString" }
     charge { 1 }

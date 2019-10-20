@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   namespace :mypage do
     root 'root#index'
-    resources :posts, except: [:destroy]
+    resources :spaces, except: [:destroy]
   end
 
   devise_for :admin_users, path: :admin, controllers: {
