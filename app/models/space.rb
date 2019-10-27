@@ -1,5 +1,7 @@
 class Space < ApplicationRecord
   belongs_to :user
+  has_many :space_images, dependent: :destroy
+  accepts_nested_attributes_for :space_images, allow_destroy: true
 
   enum status: { closed: 0, published: 1 }
 

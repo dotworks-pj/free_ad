@@ -42,7 +42,7 @@
   </div>
 
   <div class="form-group row">
-    <div class="col-sm-2 ">
+    <div class="col-sm-2">
       <%= f.label :description, class: 'col-form-label' %>
     </div>
 
@@ -51,7 +51,22 @@
     </div>
   </div>
 
+  <div class="form-group space-image row">
+    <div class="col-sm-2 ">
+      <%= f.label :space_images, class: 'col-form-label' %>
+    </div>
+
+    <div class="space_images col-sm-10">
+      <%= f.fields_for :space_images do |space_image| %>
+        <%= render 'space_image_fields', f: space_image %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association "画像を追加", f, :space_images %>
+      </div>
+    </div>
+  </div>
+
   <div class="actions">
-    <%= f.submit "投稿  する", class: 'btn btn-info' %>
+    <%= f.submit "投稿する", class: 'btn btn-info' %>
   </div>
 <% end %>
