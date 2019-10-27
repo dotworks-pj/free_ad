@@ -9,14 +9,15 @@ class Mypage::SpacesController < Mypage::BaseController
   end
 
   def new
-    @space = Space.new
+    @space = current_user.spaces.build
+    @space.space_images.build
   end
 
   def edit
   end
 
   def create
-    @space = current_user.spaces.new(space_params)
+    @space = current_user.spaces.build(space_params)
 
     if @space.save
       redirect_to mypage_space_path(@space), notice: 'Space was successfully created.'
@@ -39,6 +40,6 @@ class Mypage::SpacesController < Mypage::BaseController
     end
 
     def space_params
-      params.require(:space).permit(:name, :charge, :status, :description)
+      params.require(:space).permit(:name, :charge, :status, :description, space_images_attributes: [:image, :image_cache, :_destroy, :id])
     end
 end

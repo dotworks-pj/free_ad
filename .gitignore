@@ -60,6 +60,8 @@ node_modules/
 /public/packs-test
 /public/assets
 
+/public/uploads/
+
 # Ignore yarn files
 /yarn-error.log
 yarn-debug.log*
@@ -72,3 +74,7 @@ yarn-debug.log*
 # for ide
 /.idea
 
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

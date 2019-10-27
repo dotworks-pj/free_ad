@@ -8,6 +8,7 @@
 
 //= require ./application/jquery.min
 //= require ./application/bootstrap.min
+//= require cocoon
 //= require_tree ./application/plugins
 //= require ./application/shards.min
 //= require_tree ./application

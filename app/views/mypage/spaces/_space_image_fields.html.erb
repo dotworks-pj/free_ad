@@ -1,0 +1,7 @@
+<div class="nested-fields">
+  <%= image_tag(f.object.image.url) if f.object.image.url %>
+  <%= f.file_field :image %>
+  <%= f.hidden_field :image_cache %>
+  <%= f.hidden_field :id, value: f.object.id %>
+  <%= link_to_remove_association "画像を削除", f %>
+</div>
