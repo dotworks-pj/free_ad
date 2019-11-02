@@ -13,6 +13,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown-3">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <button class="btn btn-outline-info">広告を貼りたい</button>
+          </li>
+          <li class="nav-item">
+            <%= link_to '場所を提供する', new_mypage_place_path, class: 'btn btn-outline-info' %>
+          </li>
+
           <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to mypage_root_path(current_user), class: 'nav-link' do %>
@@ -25,12 +32,6 @@
               <% end %>
             </li>
           <% else %>
-            <li class="nav-item">
-              <button class="btn btn-outline-info">広告を貼りたい</button>
-            </li>
-            <li class="nav-item">
-              <button class="btn btn-outline-info">場所を提供する</button>
-            </li>
             <li class="nav-item">
               <%= link_to new_user_registration_path, class: 'nav-link' do %>
                 新規登録

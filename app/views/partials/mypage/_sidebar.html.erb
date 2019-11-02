@@ -3,11 +3,8 @@
     <li class="<%= 'is-active' if is_active?('#') %>">
       <%= link_to '自社プロフィール', '#' %>
     </li>
-    <li class="<%= 'is-active' if is_active?(new_mypage_space_path) %>">
-      <%= link_to '投稿する', new_mypage_space_path %>
-    </li>
-    <li class="<%= 'is-active' if is_active?(mypage_spaces_path) %>">
-      <%= link_to '投稿履歴', mypage_spaces_path %>
+    <li class="<%= 'is-active' if is_active?(mypage_places_path) %>">
+      <%= link_to 'マイ場所一覧', mypage_places_path %>
     </li>
     <li class="<%= 'is-active' if is_active?('#') %>">
       <%= link_to '売上確認', '#' %>

@@ -1,11 +1,10 @@
 <div class="mypage_contents col-md-8">
-  <div class="mypage-spaces">
+  <div class="mypage-places">
     <h3>マイ場所一覧</h3>
     <% @spaces.each do |space| %>
       <div class="space">
         <div class="row">
           <%= link_to(edit_mypage_space_path(space) ,class: "col-md-3") do %>
-            <%# binding.pry %>
             <%= image_tag(space.space_images.first.image.url(:thumb), class: "d-block") %>
           <% end %>
           <div class="col-md-9">

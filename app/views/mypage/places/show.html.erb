@@ -1,0 +1,37 @@
+<div class="mypage_contents col-md-8">
+  <div class="mypage_place_show">
+    <div class="mypage_place_title">
+      <h3><%= @place.title %></h3>
+      <%= link_to '編集', edit_mypage_place_path(@place), class: 'btn btn-outline-info' %>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div>
+          <%= image_tag(@place.main_image.url, class: "d-block") %>
+        </div>
+
+        <div>
+          この場所について: <%= simple_format @place.description %>
+        </div>
+
+        <div>
+          場所: <%= @place.name %>
+        </div>
+
+        <div>
+          住所: <%= @place.address %>
+        </div>
+
+        <div>
+          最寄駅: <%= @place.station %>
+        </div>
+
+        <div>
+          URL: <%= @place.url %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -8,7 +8,7 @@ class CreatePlaces < ActiveRecord::Migration[6.0]
       t.string :address, null: false
       t.string :station, null: false
       t.text :url
-      t.string :maim_image, null: false
+      t.string :main_image, null: false
 
       t.timestamps
     end

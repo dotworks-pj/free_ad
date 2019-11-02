@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_10_27_133234) do
     t.string "address", null: false
     t.string "station", null: false
     t.text "url"
-    t.string "maim_image", null: false
+    t.string "main_image", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_places_on_user_id"

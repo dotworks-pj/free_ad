@@ -65,55 +65,14 @@
     }
   }
 
-  //売上一覧
-  .sales{
-    .withdraw_request_btn_area{
-      padding-bottom: 50px;
+  .mypage_place_show {
+    .mypage_place_title {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      a{
-        width: 50%;
-      }
-    }
-  }
-
-  //出品する
-  .space_form {
-    .space-image img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-    }
-  }
-
-  //購入履歴
-  .orders-history {
-    li img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-    }
-  }
-
-  //出品履歴
-  .mypage-spaces {
-    .space {
       margin-bottom: 20px;
-    }
-  }
 
-  //共通パーツ
-  .image-upload {
-    position: relative;
-    width: 200px;
-    height: 200px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      h3 {
+        margin: 0 20px 0 0;
+      }
     }
   }
 }
