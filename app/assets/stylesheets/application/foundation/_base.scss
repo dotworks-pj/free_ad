@@ -110,6 +110,19 @@ section{
   color: #fff;
 }
 
+.form-group {
+  .required {
+    abbr {
+      font-size: 12px;
+      color: #fff;
+      background-color: #e65d65;
+      text-decoration: initial;
+      padding: 3px;
+      border-radius: 2px;
+    }
+  }
+}
+
 .card-list{
   .row > div{
     margin-bottom: 20px;
