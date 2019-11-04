@@ -1,0 +1,4 @@
+<div class="nested-fields">
+  <%= f.input :image, as: :file, hint: image_tag(f.object.image.url) %>
+  <%= f.input :image_cache, as: :hidden %>
+</div>

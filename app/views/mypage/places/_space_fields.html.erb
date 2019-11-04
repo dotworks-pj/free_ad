@@ -1,0 +1,14 @@
+<div class="nested-fields">
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :charge %>
+  <div class="space_images col-sm-10">
+    <%= f.simple_fields_for :space_images do |space_image| %>
+      <%= render 'space_image_fields', f: space_image %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association '画像を追加', f, :space_images %>
+    </div>
+  </div>
+  <%= link_to_remove_association "スペースを削除", f %>
+</div>

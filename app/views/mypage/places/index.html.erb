@@ -1,0 +1,22 @@
+<div class="mypage_contents col-md-8">
+  <div class="mypage-places">
+    <h3>マイ場所一覧</h3>
+    <% @places.each do |place| %>
+      <div class="space">
+        <div class="row">
+          <%= link_to(mypage_place_path(place) ,class: "col-md-3") do %>
+            <%= image_tag(place.main_image.url(:thumb), class: "d-block") %>
+          <% end %>
+          <div class="col-md-9">
+            <h4>
+              <%= place.title %>
+            </h4>
+            <div>
+              場所: <%= place.name %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
