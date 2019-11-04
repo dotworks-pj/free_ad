@@ -29,6 +29,26 @@
         <div>
           URL: <%= @place.url %>
         </div>
+
+        <% @place.spaces.each do |space| %>
+          <div>
+            掲載箇所: <%= space.name %>
+          </div>
+
+          <div>
+            掲載箇所の紹介文: <%= space.description %>
+          </div>
+
+          <div>
+            価格: <%= space.charge %>
+          </div>
+
+          <div>
+            <% space.space_images.each do |space_image| %>
+              <%= image_tag(space_image.image.url, class: "d-block") %>
+            <% end %>
+          </div>
+         <% end %>
       </div>
     </div>
   </div>

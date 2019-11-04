@@ -3,6 +3,7 @@ class Place < ApplicationRecord
 
   belongs_to :user
   has_many :spaces
+  accepts_nested_attributes_for :spaces, allow_destroy: true
 
   validates :title, presence: true
   validates :description, presence: true

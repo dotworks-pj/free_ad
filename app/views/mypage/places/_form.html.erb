@@ -1,5 +1,5 @@
 
-<%= simple_form_for [:mypage, place] do |f| %>
+<%= horizontal_form_for [:mypage, place] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -11,6 +11,16 @@
     <%= f.input :station %>
     <%= f.input :url %>
     <%= f.input :main_image, as: :file, hint: image_tag(f.object.main_image.url) %>
+    <%= f.input :main_image_cache, as: :hidden %>
+  </div>
+
+  <div class="form-space">
+    <%= f.simple_fields_for :spaces do |space| %>
+      <%= render 'space_fields', f: space %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'スペースを追加', f, :spaces %>
+    </div>
   </div>
 
   <div class="actions">
