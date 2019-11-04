@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      space: スペース
+    attributes:
+      place:
+        name: 掲載箇所
+        description: 紹介文
+        charge: 価格
+        status: ステータス
+    enums:
+      item:
+        status:
+          closed: 非公開
+          published: 公開

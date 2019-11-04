@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      place: プレイス
+    attributes:
+      place:
+        title: タイトル
+        description: 紹介文
+        name: 場所の名前
+        address: 住所
+        station: 最寄駅
+        url: URL
+        main_image: メイン画像
