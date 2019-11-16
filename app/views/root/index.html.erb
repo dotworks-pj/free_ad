@@ -10,42 +10,22 @@
     <div class="container">
       <h3 class="title">人気のエリア</h3>
       <div class="row">
-        <div class="col-md-4 ml-auto mr-auto">
-          <%= link_to '#' do %>
-            <div class="card">
-              <%= image_tag("cafe_sample.jpg", class: "img-raised") %>
-              <div class="card-body">
-                <div class="item-detail">
-                  <h4 class="card-title">平日も人が多いカフェです！</h4>
+        <% @places.each do |place| %>
+          <div class="col-md-4 ml-auto mr-auto">
+            <%= link_to place_path(place) do %>
+              <div class="card">
+                <%= image_tag("cafe_sample.jpg", class: "img-raised") %>
+                <div class="card-body">
+                  <div class="item-detail">
+                    <h4 class="card-title">
+                      <%= place.name %>
+                    </h4>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
-        </div>
-        <div class="col-md-4 ml-auto mr-auto">
-          <%= link_to '#' do %>
-            <div class="card">
-              <%= image_tag("cafe_sample.jpg", class: "img-raised") %>
-              <div class="card-body">
-                <div class="item-detail">
-                  <h4 class="card-title">平日も人が多いカフェです！</h4>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-        <div class="col-md-4 ml-auto mr-auto">
-          <%= link_to '#' do %>
-            <div class="card">
-              <%= image_tag("cafe_sample.jpg", class: "img-raised") %>
-              <div class="card-body">
-                <div class="item-detail">
-                  <h4 class="card-title">平日も人が多いカフェです！</h4>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
+            <% end %>
+          </div>
+        <% end %>
         <div class="spacer col-md-4"></div>
         <div class="spacer col-md-4"></div>
         <div class="spacer col-md-4"></div>
@@ -101,78 +81,22 @@
     <div class="container">
       <h3 class="title">新着商品</h3>
       <div class="row">
-        <div class="col-md-4 ml-auto mr-auto">
-          <%= link_to '#' do %>
-            <div class="card">
-              <%= image_tag("cafe_sample.jpg", class: "img-raised") %>
-              <div class="card-body">
-                <div class="item-detail">
-                  <h4 class="card-title">平日も人が多いカフェです！</h4>
+        <% @places.each do |place| %>
+          <div class="col-md-4 ml-auto mr-auto">
+            <%= link_to place_path(place) do %>
+              <div class="card">
+                <%= image_tag("cafe_sample.jpg", class: "img-raised") %>
+                <div class="card-body">
+                  <div class="item-detail">
+                    <h4 class="card-title">
+                      <%= place.name %>
+                    </h4>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
-        </div>
-        <div class="col-md-4 ml-auto mr-auto">
-          <%= link_to '#' do %>
-            <div class="card">
-              <%= image_tag("cafe_sample.jpg", class: "img-raised") %>
-              <div class="card-body">
-                <div class="item-detail">
-                  <h4 class="card-title">平日も人が多いカフェです！</h4>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-        <div class="col-md-4 ml-auto mr-auto">
-          <%= link_to '#' do %>
-            <div class="card">
-              <%= image_tag("cafe_sample.jpg", class: "img-raised") %>
-              <div class="card-body">
-                <div class="item-detail">
-                  <h4 class="card-title">平日も人が多いカフェです！</h4>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-        <div class="col-md-4 ml-auto mr-auto">
-          <%= link_to '#' do %>
-            <div class="card">
-              <%= image_tag("cafe_sample.jpg", class: "img-raised") %>
-              <div class="card-body">
-                <div class="item-detail">
-                  <h4 class="card-title">平日も人が多いカフェです！</h4>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-        <div class="col-md-4 ml-auto mr-auto">
-          <%= link_to '#' do %>
-            <div class="card">
-              <%= image_tag("cafe_sample.jpg", class: "img-raised") %>
-              <div class="card-body">
-                <div class="item-detail">
-                  <h4 class="card-title">平日も人が多いカフェです！</h4>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-        <div class="col-md-4 ml-auto mr-auto">
-          <%= link_to '#' do %>
-            <div class="card">
-              <%= image_tag("cafe_sample.jpg", class: "img-raised") %>
-              <div class="card-body">
-                <div class="item-detail">
-                  <h4 class="card-title">平日も人が多いカフェです！</h4>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
+            <% end %>
+          </div>
+        <% end %>
         <div class="spacer col-md-4"></div>
         <div class="spacer col-md-4"></div>
         <div class="spacer col-md-4"></div>

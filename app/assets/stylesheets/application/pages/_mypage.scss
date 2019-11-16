@@ -29,13 +29,13 @@
     a{
       display: block;
       padding: 0.8em;
-      color: $txt-main;
+      color: $primary-color;
+      border: 2px solid #008B8B;
+      border-radius: 5px;
     }
-    &.is-active{
-      background-color: #eee;
-      a{
-        color: $primary-color;
-      }
+    &.is-active a{
+      background-color: $primary-color;
+      color: #ffffff;
     }
   }
 }

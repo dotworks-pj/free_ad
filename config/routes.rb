@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     root 'root#index'
   end
 
+  resources :places, only: [:show]
+
   namespace :mypage do
     root 'root#index'
 
