@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
-class Mypage::BaseController < ApplicationController
-  before_action :authenticate_user!
+module Mypage
+  class BaseController < ApplicationController
+    before_action :authenticate_user!
 
-  layout 'mypage'
+    layout 'mypage'
+  end
 end

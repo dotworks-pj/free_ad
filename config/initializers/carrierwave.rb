@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # config/initializers/carrierwave.rb
 
 CarrierWave.configure do |config|

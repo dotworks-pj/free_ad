@@ -1,0 +1,54 @@
+require: rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - db/schema.rb
+    - bin/**/*
+    - vendor/**/*
+    - .gems/**/*
+    - resources/**/*
+    - node_modules/**/*
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'config/routes/**/*'
+    - 'config/initializers/simple_form_bootstrap.rb'
+Metrics/LineLength:
+  Enabled: false
+Style/AsciiComments:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Rails/HasAndBelongsToMany:
+  Enabled: false
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+MethodLength:
+  Max: 50
+CyclomaticComplexity:
+  Max: 25
+PerceivedComplexity:
+  Max: 25
+Style/RedundantCondition:
+  Enabled: false
+Style/RescueModifier:
+  Enabled: false
+Style/DoubleNegation:
+  Enabled: false
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
+Naming/PredicateName:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
+GuardClause:
+  MinBodyLength: 3
+CaseIndentation:
+  IndentOneStep: true
+NumericLiterals:
+  MinDigits: 7
+Rails/BulkChangeTable:
+  Enabled: false

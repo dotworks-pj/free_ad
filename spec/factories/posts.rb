@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :space do
     user { nil }
-    name { "MyString" }
+    name { 'MyString' }
     charge { 1 }
     status { 1 }
-    description { "MyText" }
+    description { 'MyText' }
   end
 end

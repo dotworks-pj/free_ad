@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 raise StandardError, 'production環境では利用できません' if Rails.env.production?
 
 # itemの作成
@@ -26,7 +28,7 @@ Space.seed(
     user: User.find(1),
     name: '湯けむりととのい事件 下',
     description: '銭湯を舞台に繰り広げられる長編サスペンス。ととのいの先に見えた衝撃の事実とは・・・！？',
-    charge: 20000,
+    charge: 20_000,
     status: :published,
     created_at: Time.current - 2.days
   },
@@ -35,7 +37,7 @@ Space.seed(
     user: User.find(1),
     name: '銭湯×ねこフォトブック',
     description: '銭湯とねこを掛け合わせたフォトブックです。',
-    charge: 15000,
+    charge: 15_000,
     status: :published,
     created_at: Time.current - 3.days
   },
@@ -84,15 +86,13 @@ Space.seed(
     status: :published,
     created_at: Time.current - 8.days
   },
-  {
-    id: 10,
-    user: User.find(3),
-    name: 'ととのいネコ写真集',
-    description: 'ととのった猫ちゃん達を見ればあなたもととのえるかも・・・？',
-    charge: 2100,
-    status: :published,
-    created_at: Time.current - 9.days
-  }
+  id: 10,
+  user: User.find(3),
+  name: 'ととのいネコ写真集',
+  description: 'ととのった猫ちゃん達を見ればあなたもととのえるかも・・・？',
+  charge: 2100,
+  status: :published,
+  created_at: Time.current - 9.days
 )
 
 published_spaces = (1..5).map do |index|
@@ -108,13 +108,12 @@ published_spaces = (1..5).map do |index|
 end
 
 Space.seed(
-
   :id, published_spaces
 )
 
 closed_spaces = (1..5).map do |index|
   {
-    id: 15+ index,
+    id: 15 + index,
     user: User.find(3),
     name: "非公開の商品#{index}",
     description: '非公開の商品です',

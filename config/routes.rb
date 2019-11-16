@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root 'root#index'
 
@@ -21,15 +23,15 @@ Rails.application.routes.draw do
   }
 
   devise_for :users, controllers: {
-    sessions:      'users/sessions',
-    passwords:     'users/passwords',
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
     registrations: 'users/registrations',
     confirmations: 'users/confirmations'
   }
 
   devise_scope :user do
-    patch "users/confirmation", to: "users/confirmations#confirm"
+    patch 'users/confirmation', to: 'users/confirmations#confirm'
   end
 
-  mount LetterOpenerWeb::Engine, at: "/letter_opener"  if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

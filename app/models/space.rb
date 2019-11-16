@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Space < ApplicationRecord
   belongs_to :place
   has_many :space_images, dependent: :destroy
@@ -13,7 +15,7 @@ class Space < ApplicationRecord
             presence: true,
             numericality: {
               only_integer: true,
-              greater_than_or_equal_to: 51,
+              greater_than_or_equal_to: 51
             }
 
   validates :status, presence: true

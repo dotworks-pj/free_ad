@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Place < ApplicationRecord
   mount_uploader :main_image, PlaceMainImageUploader
 
