@@ -15,6 +15,9 @@
  *= require_self
  */
 
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
 // ==========================================================================
 // Foundation
 // ==========================================================================
@@ -39,3 +42,4 @@
 // ==========================================================================
 @import "application/pages/top";
 @import "application/pages/mypage";
+@import "application/pages/place";

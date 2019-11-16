@@ -1,0 +1,207 @@
+.place-show{
+  & > div{
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  h3 {
+    font-weight: bold;
+    color: #008B8B;
+    text-align: left;
+    margin: 40px 0 15px;
+  }
+
+  h4 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .space-card {
+    margin-bottom: 20px;
+
+    .space-info {
+      background-color: rgba(0, 139, 139, 0.1);
+      padding: 20px;
+
+      h4 {
+        margin-top: 0;
+      }
+
+      .space_charge-label {
+        color: $txt-main;
+      }
+
+      .space_charge {
+        font-weight: bold;
+      }
+
+      .purchase-area {
+        .btn-purchase {
+          background-color: $primary-color;
+          border-color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .main-space {
+    .space-image {
+      width: 100%;
+    }
+
+    .space-info {
+      display: flex;
+      justify-content: space-between;
+
+      .left-area {
+        width: 68%;
+
+        > h4 {
+          font-size: 22px;
+        }
+      }
+
+      .right-area {
+        width: 30%;
+
+        .space_charge-label {
+          color: $txt-main;
+          font-size: 18px;
+        }
+
+        .space_charge {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 35px;
+        }
+
+        .purchase-area {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .sub_spaces {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .sub-space {
+      width: 48%;
+
+      .space-info {
+        padding: 10px;
+
+        .sub-space_bottom-area {
+          display: flex;
+          margin-top: 10px;
+
+          .left-area {
+            width: 45%;
+
+            .space_charge-label {
+              font-size: 14px;
+            }
+          }
+
+          .purchase-area {
+            width: 55%;
+
+            .btn-purchase {
+              padding: 12px 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .place-info {
+    table {
+      width: 100%;
+
+      td, th {
+        border: 1px solid #A9A9A9;
+        padding: 5px;
+      }
+
+      th {
+        background-color: rgba(0, 139, 139, 0.1);
+      }
+    }
+
+    .place-map-image {
+      width: 400px;
+    }
+  }
+
+  .place-overview {
+    background: rgba(0, 139, 139, 0.2);
+    padding: 20px;
+    border-radius: 5px;
+
+    .place_name > p {
+      font-size: 34px;
+    }
+
+    .horizontal {
+      display: flex;
+      flex-wrap: wrap;
+
+      .place_category {
+        width: 50%;
+      }
+
+      .place_space-quantity {
+        width: 50%;
+      }
+    }
+
+    .favorite {
+      width: 80%;
+      background: #FFFFFF;
+      border: 1px solid rgba(249, 0, 0, 0.5);
+      border-radius: 5px;
+      text-align: center;
+      font-size: 18px;
+      line-height: 26px;
+      padding: 10px;
+      margin: 50px auto 10px;
+
+      .far {
+        color: rgba(249, 0, 0, 0.5);
+        margin-right: 20px;
+      }
+    }
+
+    .favorite-count {
+      font-size: 18px;
+      line-height: 26px;
+      margin: 0 auto;
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .company-info {
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 3px;
+    padding: 10px;
+    margin-top: 20px;
+
+    h4 {
+      display: inline-block;
+      margin-top: 0;
+      border-bottom:  1px solid rgba(0, 0, 0, 0.16);;
+    }
+  }
+}

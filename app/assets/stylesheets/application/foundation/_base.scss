@@ -22,7 +22,6 @@ $sp: 767px;  // スマホの横幅
 
 
 body{
-  background-color: $bg-gray;
 }
 
 img{
@@ -51,17 +50,24 @@ h1{
   margin: 0;
 }
 
+h2 {
+  color: $txt-main;
+}
+
 h3{
   font-size: 23px;
+  color: $txt-main;
   margin: 20px 0 40px;
   text-align: center;
 }
 
 .h4, h4 {
+  color: #808080;
   font-size: 1.2rem;
 }
 
 p{
+  color: #808080;
   margin: 0;
 }
 

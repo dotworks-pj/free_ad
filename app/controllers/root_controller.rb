@@ -1,3 +1,5 @@
 class RootController < BaseController
-  def index; end
+  def index
+    @places = Place.limit(9)
+  end
 end
