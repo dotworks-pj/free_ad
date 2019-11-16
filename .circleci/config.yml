@@ -1,0 +1,66 @@
+references:
+  test_config: &test_config
+    working_directory: ~/free_ad
+    shell: /bin/bash --login
+    environment:
+      DATABASE_URL: mysql2://root:@127.0.0.1:3306/free_ad_test
+      RAILS_ENV: test
+      CIRCLE_ARTIFACTS: tmp/circleci-artifacts
+      CIRCLE_TEST_REPORTS: tmp/circleci-test-results
+      TZ: /uzsr/share/zoneinfo/Asia/Tokyo
+    docker:
+      - image: circleci/ruby:2.6.3-node-browsers
+      - image: circleci/mysql:5.7-ram
+      - image: redis:3.0.7-alpine
+
+version: 2
+jobs:
+  test:
+    <<: *test_config
+    steps:
+      - checkout
+      - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
+      - restore_cache:
+          key: free_ad-{{ checksum "Gemfile.lock" }}
+      - run: bundle install --jobs=10 --path vendor/bundle
+      - run:
+          name: install Chrome
+          command: |
+            curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo dpkg -i google-chrome.deb
+            sudo sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
+            rm google-chrome.deb
+      - save_cache:
+          key: free_ad-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
+      - run: dockerize -wait tcp://127.0.0.1:6379 -timeout 1m
+      - run: bundle exec rails db:create db:schema:load
+      - run:
+          command: bundle exec rubocop --rails
+      - run:
+          command: |
+              bundle exec rspec --format documentation \
+                                $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+      - store_artifacts:
+          name: 'Store log files'
+          path: log
+      - store_test_results:
+          path: tmp/test-results
+      - store_artifacts:
+          name: 'System test screenshots'
+          path: tmp/screenshots
+      - store_artifacts:
+          path: tmp/circleci-artifacts
+      - store_artifacts:
+          path: log
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore: [staging, production, ci]
