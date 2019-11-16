@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 raise StandardError, 'production環境では利用できません' if Rails.env.production?
 
 # userの作成

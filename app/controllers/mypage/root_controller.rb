@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
-class Mypage::RootController < Mypage::BaseController
-  def index; end
+module Mypage
+  class RootController < Mypage::BaseController
+    def index; end
+  end
 end

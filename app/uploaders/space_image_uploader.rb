@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SpaceImageUploader < BaseImageUploader
   process resize_to_fit: [540, 360]
 

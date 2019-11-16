@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RemoveUserIdFromSpaces < ActiveRecord::Migration[6.0]
   def change
     remove_reference :spaces, :user, null: false, foreign_key: true
