@@ -41,6 +41,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'letter_opener_web'
   gem 'rspec-rails'
+  gem 'rubocop-rails'
 end
 
 group :development do

@@ -1,0 +1,11 @@
+require: rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - db/schema.rb
+    - bin/**/*
+    - vendor/**/*
+    - .gems/**/*
+    - resources/**/*
+    - node_modules/**/*
