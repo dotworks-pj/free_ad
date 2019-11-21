@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_02_131932) do
+ActiveRecord::Schema.define(version: 2019_11_17_141841) do
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -57,6 +57,18 @@ ActiveRecord::Schema.define(version: 2019_11_02_131932) do
     t.index ["place_id"], name: "index_spaces_on_place_id"
   end
 
+  create_table "user_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "organization", null: false
+    t.string "representative", null: false
+    t.string "post_code", null: false
+    t.string "address", null: false
+    t.string "phone", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_user_profiles_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -84,4 +96,5 @@ ActiveRecord::Schema.define(version: 2019_11_02_131932) do
   add_foreign_key "places", "users"
   add_foreign_key "space_images", "spaces"
   add_foreign_key "spaces", "places"
+  add_foreign_key "user_profiles", "users"
 end
