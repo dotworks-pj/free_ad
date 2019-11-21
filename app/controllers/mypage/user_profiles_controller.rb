@@ -1,37 +1,41 @@
-class Mypage::UserProfilesController < Mypage::BaseController
-  before_action :set_user_profile, only: %i[show edit update]
+# frozen_string_literal: true
 
-  def new
-    @user_profile = UserProfile.new
-  end
+module Mypage
+  class UserProfilesController < Mypage::BaseController
+    before_action :set_user_profile, only: %i[edit update]
 
-  def edit; end
-
-  def create
-    @user_profile = current_user.build_profile(user_profile_params)
-
-    if @user_profile.save
-      redirect_to mypage_root_path, notice: '自社プロフィールを登録しました'
-    else
-      render :new
+    def new
+      @user_profile = UserProfile.new
     end
-  end
 
-  def update
-    if @user_profile.update(user_profile_params)
-      redirect_to mypage_root_path, notice: '自社プロフィールを更新しました'
-    else
-      render :edit
+    def edit; end
+
+    def create
+      @user_profile = current_user.build_profile(user_profile_params)
+
+      if @user_profile.save
+        redirect_to mypage_root_path, notice: '自社プロフィールを登録しました'
+      else
+        render :new
+      end
     end
-  end
 
-  private
+    def update
+      if @user_profile.update(user_profile_params)
+        redirect_to mypage_root_path, notice: '自社プロフィールを更新しました'
+      else
+        render :edit
+      end
+    end
 
-  def set_user_profile
-    @user_profile = UserProfile.find(params[:id])
-  end
+    private
 
-  def user_profile_params
-    params.require(:user_profile).permit(:organization, :representative, :post_code, :description, :address, :phone)
+    def set_user_profile
+      @user_profile = UserProfile.find(params[:id])
+    end
+
+    def user_profile_params
+      params.require(:user_profile).permit(:organization, :representative, :post_code, :description, :address, :phone)
+    end
   end
 end

@@ -12,7 +12,7 @@ AllCops:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
-    - 'config/routes/**/*'
+    - 'config/routes.rb'
     - 'config/initializers/simple_form_bootstrap.rb'
 Metrics/LineLength:
   Enabled: false
