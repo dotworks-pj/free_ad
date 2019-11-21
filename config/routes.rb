@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   namespace :mypage do
     root 'root#index'
 
+    resources :user_profiles, only: %i[new edit create update]
     resources :places, except: [:destroy] do
       resources :spaces, except: [:destroy]
     end
