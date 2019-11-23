@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_17_141841) do
+ActiveRecord::Schema.define(version: 2019_11_23_055532) do
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 2019_11_17_141841) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "place_owner_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "place_id", null: false
+    t.string "organization"
+    t.string "representative"
+    t.string "post_code"
+    t.string "address"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["place_id"], name: "index_place_owner_profiles_on_place_id"
   end
 
   create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -93,6 +105,7 @@ ActiveRecord::Schema.define(version: 2019_11_17_141841) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "place_owner_profiles", "places"
   add_foreign_key "places", "users"
   add_foreign_key "space_images", "spaces"
   add_foreign_key "spaces", "places"

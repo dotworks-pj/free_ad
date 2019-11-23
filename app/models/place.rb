@@ -4,6 +4,7 @@ class Place < ApplicationRecord
   mount_uploader :main_image, PlaceMainImageUploader
 
   belongs_to :user
+  has_one :owner_profile, class_name: 'PlaceOwnerProfile'
   has_many :spaces
   accepts_nested_attributes_for :spaces, allow_destroy: true
 

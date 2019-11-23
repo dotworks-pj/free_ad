@@ -23,7 +23,7 @@ module Mypage
     def create
       @place = current_user.places.build(place_params)
       if @place.save
-        redirect_to mypage_place_path(@place), notice: 'Place was successfully created.'
+        redirect_to new_mypage_place_owner_profile_path(@place), notice: 'プレイスを保存しました'
       else
         render :new
       end
@@ -31,7 +31,7 @@ module Mypage
 
     def update
       if @place.update(place_params)
-        redirect_to mypage_place_path(@place), notice: 'Place was successfully updated.'
+        redirect_to edit_mypage_place_owner_profile_path(@place), notice: 'プレイスを保存しました'
       else
         render :edit
       end
