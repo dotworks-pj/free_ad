@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :user_profiles, only: %i[new edit create update]
     resources :places, except: [:destroy] do
       resources :spaces, except: [:destroy]
+      resource :place_owner_profiles, path: :owner_profile, as: :owner_profile, only: %i[new edit create update]
     end
   end
 
