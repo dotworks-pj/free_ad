@@ -46,6 +46,8 @@ module Mypage
     def publish
       if @place.publish
         redirect_to mypage_place_path(@place), notice: 'プレイスを投稿しました'
+      else
+        render 'confirm'
       end
     end
 
