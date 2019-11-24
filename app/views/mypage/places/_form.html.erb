@@ -13,16 +13,7 @@
     <%= f.input :main_image_cache, as: :hidden %>
   </div>
 
-  <div class="form-space">
-    <%= f.simple_fields_for :spaces do |space| %>
-      <%= render 'space_fields', f: space %>
-    <% end %>
-    <div class="links">
-      <%= link_to_add_association 'スペースを追加', f, :spaces %>
-    </div>
-  </div>
-
   <div class="actions">
-    <%= f.submit '次へ', class: 'btn btn-info' %>
+    <%= f.submit '次へ', class: 'btn btn-success' %>
   </div>
 <% end %>

@@ -6,10 +6,6 @@ class ChangeColumnToAllowNull < ActiveRecord::Migration[6.0]
     change_column :places, :address, :string, null: true
     change_column :places, :station, :string, null: true
     change_column :places, :main_image, :string, null: true
-
-    change_column :spaces, :name, :string, null: true
-    change_column :spaces, :charge, :integer, null: true
-    change_column :spaces, :charge, :integer, null: true
   end
 
   def down
@@ -19,9 +15,5 @@ class ChangeColumnToAllowNull < ActiveRecord::Migration[6.0]
     change_column :places, :address, :string, null: false
     change_column :places, :station, :string, null: false
     change_column :places, :main_image, :string, null: false
-
-    change_column :spaces, :name, :string, null: false
-    change_column :spaces, :charge, :integer, null: false
-    change_column :spaces, :charge, :integer, null: false
   end
 end

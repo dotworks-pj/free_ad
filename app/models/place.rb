@@ -3,6 +3,8 @@
 class Place < ApplicationRecord
   mount_uploader :main_image, PlaceMainImageUploader
 
+  enum status: { closed: 0, published: 1 }
+
   belongs_to :user
   has_one :owner_profile, class_name: 'PlaceOwnerProfile'
   has_many :spaces
@@ -14,4 +16,8 @@ class Place < ApplicationRecord
   validates :address, presence: true
   validates :station, presence: true
   validates :main_image, presence: true
+
+  def publish
+    update!(status: :published)
+  end
 end

@@ -1,0 +1,131 @@
+<div class="section place-show">
+  <div class="container">
+    <div class="row">
+      <div class="place_main-area col-md-12">
+        <div class="place-title_area">
+          <h2 class="title"><%= @place.title %></h2>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="place-image">
+          <%= image_tag("cafe_sample.jpg", class: "d-block") %>
+        </div>
+
+        <h3>この場所について</h3>
+        <div class="place_description">
+          <%= simple_format @place.description %>
+        </div>
+
+        <h3>掲載箇所</h3>
+        <div class="space-card  main-space">
+          <%= image_tag(@main_space.space_images.first.image.url, class: "space-image") %>
+          <div class="space-info">
+            <div class="left-area">
+              <h4><%= @main_space.name %></h4>
+              <p>
+                <%= simple_format @main_space.description %>
+              </p>
+            </div>
+            <div class="right-area">
+              <div class="space_charge-label">料金（1週間あたり）</div>
+              <p class="space_charge"><%= number_to_currency  @main_space.charge %></p>
+              <div class="purchase-area">
+                <%= link_to 'ここに広告を貼りたい！  ', '#', class: 'btn btn-success btn-purchase' %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub_spaces">
+          <% @sub_spaces.each do |space| %>
+            <div class="space-card sub-space">
+              <%= image_tag(space.space_images.first.image.url, class: "space-image") %>
+              <div class="space-info">
+                <h4><%= space.name %></h4>
+                <p>
+                  <%= simple_format space.description %>
+                </p>
+                <div class="sub-space_bottom-area">
+                  <div class="left-area">
+                    <div class="space_charge-label">料金（1週間あたり）</div>
+                    <p class="space_charge"><%= number_to_currency  space.charge %></p>
+                  </div>
+                  <div class="purchase-area">
+                    <%= link_to 'ここに広告を貼りたい！  ', '#', class: 'btn btn-success btn-purchase' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="place-info">
+          <h3>プレイス概要</h3>
+          <table>
+            <tr>
+              <th>場所（お店の名前）</th>
+              <td><%= @place.name %></td>
+            </tr>
+            <tr>
+              <th>客数/日</th>
+              <td>約100人 / 1日あたり</td>
+            </tr>
+            <tr>
+              <th>客層</th>
+              <td>20代〜30代</td>
+            </tr>
+            <tr>
+              <th>住所</th>
+              <td>
+                <p><%= @place.address %></p>
+                <%= image_tag("place_map_sample.png", class: "place-map-image") %>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="place_side-area col-md-4">
+        <div class="place-overview">
+          <div class="place_name">
+            <h4>場所</h4>
+            <p><%= @place.name %></p>
+          </div>
+
+          <div class="place_address">
+            <h4>住所</h4>
+            <p><%= @place.address %></p>
+          </div>
+
+          <div class="horizontal">
+            <div class="place_category">
+              <h4>ジャンル</h4>
+              <p>飲食店</p>
+            </div>
+
+            <div class="place_space-quantity">
+              <h4>提供スペースの数</h4>
+              <p>3箇所</p>
+            </div>
+
+            <p class="favorite"><%= icon("far", "heart") %>お気に入り</p>
+            <p class="favorite-count">121人<span>がお気に入りしました</span></p>
+          </div>
+        </div>
+
+        <div class="company-info">
+          <div class="place_name">
+            <h4>掲載会社</h4>
+            <p>株式会社ヒルカワ</p>
+          </div>
+
+          <div class="place_address">
+            <h4>住所</h4>
+            <p>岐阜県中津川市蛭川</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,7 +7,7 @@
         <%= link_to '自社プロフィール', new_mypage_user_profile_path %>
       <% end %>
     </li>
-    <li class="<%= 'is-active' if is_active?(mypage_places_path) %>">
+    <li class="<%= 'is-active' if controller.controller_name == 'places' || controller.controller_name == 'spaces'  %>">
       <%= link_to 'マイ場所一覧', mypage_places_path %>
     </li>
     <li class="<%= 'is-active' if is_active?('#') %>">

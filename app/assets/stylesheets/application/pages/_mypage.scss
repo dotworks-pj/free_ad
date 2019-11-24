@@ -65,12 +65,11 @@
     }
   }
 
-  .mypage_place_show {
-    .mypage_place_title {
+  .mypage-place-show {
+    .place-title_area {
       display: flex;
-      margin-bottom: 20px;
 
-      h3 {
+      h2 {
         margin: 0 20px 0 0;
       }
     }
