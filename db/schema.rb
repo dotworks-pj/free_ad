@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_23_055532) do
+ActiveRecord::Schema.define(version: 2019_11_24_030936) do
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,13 +38,14 @@ ActiveRecord::Schema.define(version: 2019_11_23_055532) do
 
   create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "title", null: false
-    t.text "description", null: false
-    t.string "name", null: false
-    t.string "address", null: false
-    t.string "station", null: false
+    t.integer "status", default: 0, null: false
+    t.string "title"
+    t.text "description"
+    t.string "name"
+    t.string "address"
+    t.string "station"
     t.text "url"
-    t.string "main_image", null: false
+    t.string "main_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_places_on_user_id"

@@ -7,7 +7,7 @@ class AddPlaceIdToSpaces < ActiveRecord::Migration[6.0]
   end
 
   def down
-    remove_foreign_key :spaces, :place_id
-    remove_reference :spaces, :place_id
+    remove_foreign_key :spaces, :places
+    remove_reference :spaces, :place
   end
 end

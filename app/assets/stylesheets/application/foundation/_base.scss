@@ -88,10 +88,26 @@ section{
 
 .btn-success {
   color: #fff;
-  border-color: #13A9B8;
-  background-color: #13A9B8;
+  border-color: $primary-color;
+  background-color: $primary-color;
   box-shadow: none;
+
+  &:hover {
+    border-color: $primary-color;
+    background-color: $primary-color;
+  }
 }
+
+.btn-outline-success {
+  color: $primary-color;
+  border-color: $primary-color;
+
+  &:hover {
+    border-color: $primary-color;
+    background-color: $primary-color;
+  }
+}
+
 .btn-outline-info{
   background-color: #fff;
 }

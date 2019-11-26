@@ -1,10 +1,10 @@
-<div class="mypage_contents col-md-8">
-  <div class="mypage-places">
-    <h3>マイ場所一覧</h3>
+<div class="mypage_contents">
+  <div class="mypage-spaces">
+    <h3>スペース一覧</h3>
     <% @spaces.each do |space| %>
       <div class="space">
         <div class="row">
-          <%= link_to(edit_mypage_space_path(space) ,class: "col-md-3") do %>
+          <%= link_to(edit_mypage_place_space_path(@place, space) ,class: "col-md-3") do %>
             <%= image_tag(space.space_images.first.image.url(:thumb), class: "d-block") %>
           <% end %>
           <div class="col-md-9">
@@ -21,6 +21,13 @@
         </div>
       </div>
     <% end %>
-    <%= link_to 'New', new_mypage_space_path(@space) %>
+    <%= link_to 'スペースを追加', new_mypage_place_space_path(@place) %>
+  </div>
+  <div class="actions">
+    <% if @place.owner_profile %>
+      <%= link_to '次へ', edit_mypage_place_owner_profile_path(@place), class: 'btn btn-success' %>
+    <% else %>
+      <%= link_to '次へ', new_mypage_place_owner_profile_path(@place), class: 'btn btn-success' %>
+    <% end %>
   </div>
 </div>

@@ -2,26 +2,25 @@
 
 module Mypage
   class SpacesController < Mypage::BaseController
-    before_action :set_space, only: %i[show edit update]
+    before_action :set_place, only: %i[index new edit create update]
+    before_action :set_space, only: %i[edit update]
 
     def index
-      @spaces = current_user.spaces
+      @spaces = @place.spaces
     end
 
-    def show; end
-
     def new
-      @space = current_user.spaces.build
-      @space.space_images.build
+      @space = Space.new
+      @space.build_space_images
     end
 
     def edit; end
 
     def create
-      @space = current_user.spaces.build(space_params)
+      @space = @place.spaces.build(space_params)
 
       if @space.save
-        redirect_to mypage_space_path(@space), notice: 'Space was successfully created.'
+        redirect_to mypage_place_spaces_path(@place, @space), notice: 'Space was successfully created.'
       else
         render :new
       end
@@ -29,7 +28,7 @@ module Mypage
 
     def update
       if @space.update(space_params)
-        redirect_to mypage_space_path(@space), notice: 'Space was successfully updated.'
+        redirect_to mypage_place_spaces_path(@place, @space), notice: 'Space was successfully updated.'
       else
         render :edit
       end
@@ -37,12 +36,16 @@ module Mypage
 
     private
 
+    def set_place
+      @place = current_user.places.find(params[:place_id])
+    end
+
     def set_space
-      @space = current_user.spaces.find(params[:id])
+      @space = @place.spaces.find(params[:id])
     end
 
     def space_params
-      params.require(:space).permit(:name, :charge, :status, :description, space_images_attributes: %i[image image_cache _destroy id])
+      params.require(:space).permit(:name, :charge, :status, :description, space_images_attributes: %i[id image image_cache _destroy])
     end
   end
 end

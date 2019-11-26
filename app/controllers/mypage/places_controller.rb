@@ -2,18 +2,20 @@
 
 module Mypage
   class PlacesController < Mypage::BaseController
-    before_action :set_place, only: %i[show edit update]
+    before_action :set_place, only: %i[show edit update confirm publish]
 
     def index
       @places = current_user.places
     end
 
-    def show; end
+    def show
+      @places = current_user.places
+      @main_space = @place.spaces.first
+      @sub_spaces = @place.spaces.drop(1)
+    end
 
     def new
       @place = Place.new
-      space = @place.spaces.build
-      space.build_space_images
     end
 
     def edit
@@ -23,7 +25,7 @@ module Mypage
     def create
       @place = current_user.places.build(place_params)
       if @place.save
-        redirect_to new_mypage_place_owner_profile_path(@place), notice: 'プレイスを保存しました'
+        redirect_to mypage_place_spaces_path(@place), notice: 'プレイスを保存しました'
       else
         render :new
       end
@@ -31,9 +33,22 @@ module Mypage
 
     def update
       if @place.update(place_params)
-        redirect_to edit_mypage_place_owner_profile_path(@place), notice: 'プレイスを保存しました'
+        redirect_to mypage_place_spaces_path(@place), notice: 'プレイスを保存しました'
       else
         render :edit
+      end
+    end
+
+    def confirm
+      @main_space = @place.spaces.first
+      @sub_spaces = @place.spaces.drop(1)
+    end
+
+    def publish
+      if @place.publish
+        redirect_to mypage_place_path(@place), notice: 'プレイスを投稿しました'
+      else
+        render 'confirm'
       end
     end
 

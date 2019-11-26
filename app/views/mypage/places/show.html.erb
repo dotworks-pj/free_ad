@@ -1,54 +1,89 @@
-<div class="mypage_contents col-md-8">
-  <div class="mypage_place_show">
-    <div class="mypage_place_title">
-      <h3><%= @place.title %></h3>
-      <%= link_to '編集', edit_mypage_place_path(@place), class: 'btn btn-outline-info' %>
+<div class="mypage_contents show">
+  <%= render 'partials/mypage/sidebar' %>
+  <div class="place-show mypage-place-show col-md-8">
+    <div class="place_main-area">
+      <div class="place-title_area">
+        <h2 class="title"><%= @place.title %></h2>
+        <%= link_to '編集', edit_mypage_place_path(@place), class: 'btn btn-outline-success' %>
+      </div>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div>
-          <%= image_tag(@place.main_image.url, class: "d-block") %>
-        </div>
 
-        <div>
-          この場所について: <%= simple_format @place.description %>
-        </div>
+    <div class="col-md-12">
+      <div class="place-image">
+        <%= image_tag("cafe_sample.jpg", class: "d-block") %>
+      </div>
 
-        <div>
-          場所: <%= @place.name %>
-        </div>
+      <h3>この場所について</h3>
+      <div class="place_description">
+        <%= simple_format @place.description %>
+      </div>
 
-        <div>
-          住所: <%= @place.address %>
-        </div>
-
-        <div>
-          最寄駅: <%= @place.station %>
-        </div>
-
-        <div>
-          URL: <%= @place.url %>
-        </div>
-
-        <% @place.spaces.each do |space| %>
-          <div>
-            掲載箇所: <%= space.name %>
+      <h3>掲載箇所</h3>
+      <div class="space-card  main-space">
+        <%= image_tag(@main_space.space_images.first.image.url, class: "space-image") %>
+        <div class="space-info">
+          <div class="left-area">
+            <h4><%= @main_space.name %></h4>
+            <p>
+              <%= simple_format @main_space.description %>
+            </p>
           </div>
-
-          <div>
-            掲載箇所の紹介文: <%= space.description %>
+          <div class="right-area">
+            <div class="space_charge-label">料金（1週間あたり）</div>
+            <p class="space_charge"><%= number_to_currency  @main_space.charge %></p>
+            <div class="purchase-area">
+              <%= link_to 'ここに広告を貼りたい！  ', '#', class: 'btn btn-success btn-purchase' %>
+            </div>
           </div>
+        </div>
+      </div>
 
-          <div>
-            価格: <%= space.charge %>
+      <div class="sub_spaces">
+        <% @sub_spaces.each do |space| %>
+          <div class="space-card sub-space">
+            <%= image_tag(space.space_images.first.image.url, class: "space-image") %>
+            <div class="space-info">
+              <h4><%= space.name %></h4>
+              <p>
+                <%= simple_format space.description %>
+              </p>
+              <div class="sub-space_bottom-area">
+                <div class="left-area">
+                  <div class="space_charge-label">料金（1週間あたり）</div>
+                  <p class="space_charge"><%= number_to_currency  space.charge %></p>
+                </div>
+                <div class="purchase-area">
+                  <%= link_to 'ここに広告を貼りたい！  ', '#', class: 'btn btn-success btn-purchase' %>
+                </div>
+              </div>
+            </div>
           </div>
+        <% end %>
+      </div>
 
-          <div>
-            <% space.space_images.each do |space_image| %>
-              <%= image_tag(space_image.image.url, class: "d-block") %>
-            <% end %>
-          </div>
-         <% end %>
+      <div class="place-info">
+        <h3>プレイス概要</h3>
+        <table>
+          <tr>
+            <th>場所（お店の名前）</th>
+            <td><%= @place.name %></td>
+          </tr>
+          <tr>
+            <th>客数/日</th>
+            <td>約100人 / 1日あたり</td>
+          </tr>
+          <tr>
+            <th>客層</th>
+            <td>20代〜30代</td>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <td>
+              <p><%= @place.address %></p>
+              <%= image_tag("place_map_sample.png", class: "place-map-image") %>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>

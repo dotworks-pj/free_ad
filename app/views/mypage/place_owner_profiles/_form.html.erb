@@ -1,16 +1,18 @@
-<%= horizontal_form_for [:mypage, place_owner_profile], url: mypage_place_owner_profile_path do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="mypage_form">
+  <%= horizontal_form_for [:mypage, place_owner_profile], url: mypage_place_owner_profile_path do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :organization %>
-    <%= f.input :representative %>
-    <%= f.input :post_code %>
-    <%= f.input :address %>
-    <%= f.input :phone %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :organization %>
+      <%= f.input :representative %>
+      <%= f.input :post_code %>
+      <%= f.input :address %>
+      <%= f.input :phone %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit '投稿する', class: 'btn btn-info' %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit '投稿する', class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>
