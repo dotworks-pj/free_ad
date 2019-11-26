@@ -1,4 +1,4 @@
-<div class="mypage_contents col-md-8">
+<div class="mypage_contents">
   <div class="mypage-spaces">
     <h3>スペース一覧</h3>
     <% @spaces.each do |space| %>
@@ -21,11 +21,13 @@
         </div>
       </div>
     <% end %>
-    <%= link_to 'New', new_mypage_place_space_path(@place) %>
+    <%= link_to 'スペースを追加', new_mypage_place_space_path(@place) %>
   </div>
-  <% if @place.owner_profile %>
-    <%= link_to '次へ', edit_mypage_place_owner_profile_path(@place), class: 'btn btn-info' %>
-  <% else %>
-    <%= link_to '次へ', new_mypage_place_owner_profile_path(@place), class: 'btn btn-info' %>
-  <% end %>
+  <div class="actions">
+    <% if @place.owner_profile %>
+      <%= link_to '次へ', edit_mypage_place_owner_profile_path(@place), class: 'btn btn-success' %>
+    <% else %>
+      <%= link_to '次へ', new_mypage_place_owner_profile_path(@place), class: 'btn btn-success' %>
+    <% end %>
+  </div>
 </div>

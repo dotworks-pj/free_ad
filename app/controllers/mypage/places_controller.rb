@@ -9,6 +9,7 @@ module Mypage
     end
 
     def show
+      @places = current_user.places
       @main_space = @place.spaces.first
       @sub_spaces = @place.spaces.drop(1)
     end

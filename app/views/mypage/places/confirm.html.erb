@@ -1,5 +1,7 @@
-<div class="mypage_contents col-md-12">
+<div class="mypage_contents confirm">
   <h3>プレビュー</h3>
   <%= render 'partials/place', place: @place, main_space: @main_space, sub_spaces: @sub_spaces %>
-  <%= link_to '投稿する', publish_mypage_place_path(@place), method: :patch, class: 'btn btn-success' %>
+  <div class="actions">
+    <%= link_to '投稿する', publish_mypage_place_path(@place), method: :patch, class: 'btn btn-success' %>
+  </div>
 </div>

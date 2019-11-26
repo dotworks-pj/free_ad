@@ -1,26 +1,12 @@
-<div class="sidebar col-md-4">
-  <ul class="menu-list">
-    <li class="<%= 'is-active' if controller.controller_name == 'user_profiles' %>">
-      <% if current_user.profile&.persisted? %>
-        <%= link_to '自社プロフィール', edit_mypage_user_profile_path(current_user.profile) %>
-      <% else %>
-        <%= link_to '自社プロフィール', new_mypage_user_profile_path %>
+<div class="mypage_side-bar col-md-3">
+  <h3>投稿場所一覧</h3>
+  <% @places.each do |place| %>
+    <div class="places">
+      <%= link_to mypage_place_path(place) do %>
+        <h4>
+          <%= place.title %>
+        </h4>
       <% end %>
-    </li>
-    <li class="<%= 'is-active' if controller.controller_name == 'places' || controller.controller_name == 'spaces'  %>">
-      <%= link_to 'マイ場所一覧', mypage_places_path %>
-    </li>
-    <li class="<%= 'is-active' if is_active?('#') %>">
-      <%= link_to '売上確認', '#' %>
-    </li>
-    <li class="<%= 'is-active' if is_active?('#') %>">
-      <%= link_to '会員情報変更', '#' %>
-    </li>
-    <li class="<%= 'is-active' if is_active?('#') %>">
-      <%= link_to 'メールアドレス変更', '#' %>
-    </li>
-    <li class="<%= 'is-active' if is_active?('#') %>">
-      <%= link_to 'パスワード変更', '#' %>
-    </li>
-  </ul>
+    </div>
+  <% end %>
 </div>

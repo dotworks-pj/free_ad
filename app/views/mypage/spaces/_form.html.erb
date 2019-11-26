@@ -1,21 +1,22 @@
-<%# binding.pry %>
-<%= horizontal_form_for [:mypage, place, space] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="mypage_form">
+  <%= horizontal_form_for [:mypage, place, space] do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :charge %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :charge %>
+    </div>
 
-  <div class="space_images col-sm-10">
-    <%= f.simple_fields_for :space_images do |space_image| %>
-      <%= render 'space_image_fields', f: space_image %>
-    <% end %>
-  </div>
+    <div class="space_images col-sm-10">
+      <%= f.simple_fields_for :space_images do |space_image| %>
+        <%= render 'space_image_fields', f: space_image %>
+      <% end %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit '次へ', class: 'btn btn-success' %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit '次へ', class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>

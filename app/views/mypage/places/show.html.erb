@@ -1,6 +1,7 @@
-<div class="mypage_contents col-md-8">
-  <div class="place-show mypage-place-show">
-    <div class="place_main-area col-md-12">
+<div class="mypage_contents show">
+  <%= render 'partials/mypage/sidebar' %>
+  <div class="place-show mypage-place-show col-md-8">
+    <div class="place_main-area">
       <div class="place-title_area">
         <h2 class="title"><%= @place.title %></h2>
         <%= link_to '編集', edit_mypage_place_path(@place), class: 'btn btn-outline-success' %>
