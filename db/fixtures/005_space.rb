@@ -33,7 +33,7 @@ Space.seed(
   :id, sub_spaces
 )
 
-sub_spaces_2 = (1..10).map do |index|
+sub_spaces2 = (1..10).map do |index|
   {
     id: 20 + index,
     place: Place.find(index),
@@ -45,5 +45,5 @@ sub_spaces_2 = (1..10).map do |index|
 end
 
 Space.seed(
-  :id, sub_spaces_2
+  :id, sub_spaces2
 )

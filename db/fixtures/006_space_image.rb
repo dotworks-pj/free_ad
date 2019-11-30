@@ -8,7 +8,7 @@ Space.find_each do |space|
     {
       id: (space.id - 1) * 4 + index,
       space: space,
-      image:  File.open("./db/fixtures/images/sample.png"),
+      image: File.open('./db/fixtures/images/sample.png')
     }
   end
 
@@ -16,4 +16,3 @@ Space.find_each do |space|
     :id, space_images
   )
 end
-

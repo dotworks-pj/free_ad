@@ -14,7 +14,7 @@ places = (1..10).map do |index|
     address: '岐阜県中津川市蛭川',
     station: '恵那駅',
     url: 'https://dotworkscorp.com/',
-    main_image:  File.open("./db/fixtures/images/cafe_sample.jpg"),
+    main_image: File.open('./db/fixtures/images/cafe_sample.jpg')
   }
 end
 
@@ -33,7 +33,7 @@ closed_places = (11..15).map do |index|
     address: '岐阜県中津川市蛭川',
     station: '恵那駅',
     url: 'https://dotworkscorp.com/',
-    main_image:  File.open("./db/fixtures/images/cafe_sample.jpg"),
+    main_image: File.open('./db/fixtures/images/cafe_sample.jpg')
   }
 end
 
