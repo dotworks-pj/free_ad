@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Advertisement < ApplicationRecord
   mount_uploader :qr_image, PlaceMainImageUploader
   mount_uploader :original_image, PlaceMainImageUploader

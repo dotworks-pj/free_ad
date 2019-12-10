@@ -16,8 +16,7 @@ module Mypage
       @advertisement = Advertisement.new
     end
 
-    def edit
-    end
+    def edit; end
 
     def create
       @advertisement = current_user.advertisements.build(advertisement_params)
