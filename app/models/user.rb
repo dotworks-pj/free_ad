@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_one :profile, class_name: 'UserProfile', dependent: :destroy
   has_many :places, dependent: :destroy
+  has_many :advertisements, dependent: :destroy
 
   def password_required?
     super if confirmed?

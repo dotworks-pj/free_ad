@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     root 'root#index'
 
     resources :user_profiles, only: %i[new edit create update]
+    resources :advertisements, except: [:destroy]
     resources :places, except: [:destroy] do
       resources :spaces, except: [:show]
       resource :place_owner_profiles, path: :owner_profile, as: :owner_profile, only: %i[new edit create update]

@@ -1,0 +1,12 @@
+<div class="mypage_side-bar col-md-3">
+  <h3>広告一覧</h3>
+  <% @advertisements.each do |advertisement| %>
+    <div class="advertisements">
+      <%= link_to mypage_advertisement_path(advertisement) do %>
+        <h4>
+          <%= advertisement.title %>
+        </h4>
+      <% end %>
+    </div>
+  <% end %>
+</div>

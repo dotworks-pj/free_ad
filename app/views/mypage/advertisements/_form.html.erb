@@ -1,0 +1,23 @@
+<div class="mypage_form">
+  <%= horizontal_form_for [:mypage, advertisement] do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :use_template, as: :radio_buttons, collection: [['使用する', true], ['使用しない', false]] %>
+      <%= f.association :advertisement_template, collection: AdvertisementTemplate.order(:id), prompt: 'デザインを選択' %>
+      <%= f.input :title %>
+      <%= f.input :url %>
+      <%= f.input :qr_image, as: :file, hint: image_tag(f.object.qr_image.url) %>
+      <%= f.input :qr_image_cache, as: :hidden %>
+      <%= f.input :description %>
+      <%= f.input :original_image, as: :file, hint: image_tag(f.object.original_image.url) %>
+      <%= f.input :original_image_cache, as: :hidden %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit '保存', class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>

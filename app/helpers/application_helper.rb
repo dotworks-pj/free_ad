@@ -19,8 +19,8 @@ module ApplicationHelper
     options.deep_merge! html: {},
                         wrapper: :horizontal_form,
                         wrapper_mappings: {
-                          check_boxes: :horizontal_radio_and_checkboxes,
-                          radio_buttons: :horizontal_radio_and_checkboxes,
+                          check_boxes: :horizontal_collection,
+                          radio_buttons: :horizontal_collection,
                           file: :horizontal_file,
                           boolean: :horizontal_boolean
                         }
