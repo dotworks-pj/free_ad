@@ -1,0 +1,9 @@
+<div class="mypage_contents show">
+  <%= render 'partials/mypage/advertisements' %>
+  <div class="advertisement-show mypage-advertisement-show col-md-8">
+    <div><%= @advertisement.name %></div>
+    <%= link_to '編集', edit_mypage_advertisement_path(@advertisement), class: 'btn btn-outline-success' %>
+  </div>
+</div>
+
+

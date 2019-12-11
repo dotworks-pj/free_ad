@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_24_030936) do
+ActiveRecord::Schema.define(version: 2019_12_01_081400) do
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +22,30 @@ ActiveRecord::Schema.define(version: 2019_11_24_030936) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "advertisement_templates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.string "image", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "advertisements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name", null: false
+    t.bigint "advertisement_template_id", null: false
+    t.string "title"
+    t.text "url"
+    t.string "qr_image"
+    t.string "description"
+    t.boolean "use_template", default: true, null: false
+    t.string "original_image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["advertisement_template_id"], name: "index_advertisements_on_advertisement_template_id"
+    t.index ["user_id"], name: "index_advertisements_on_user_id"
   end
 
   create_table "place_owner_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -106,6 +130,8 @@ ActiveRecord::Schema.define(version: 2019_11_24_030936) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "advertisements", "advertisement_templates"
+  add_foreign_key "advertisements", "users"
   add_foreign_key "place_owner_profiles", "places"
   add_foreign_key "places", "users"
   add_foreign_key "space_images", "spaces"

@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      advertisement: 広告
+    attributes:
+      advertisement:
+        name: ポスター名
+        use_template: QRポスターテンプレート
+        advertisement_template: デザイン
+        title: タイトル
+        url: QR生成URL
+        qr_image: デザインQR用画像アップロード
+        description: テキスト
+        original_image: オリジナルポスター
+
