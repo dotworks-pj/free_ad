@@ -6,7 +6,7 @@ ja:
       advertisement:
         name: ポスター名
         use_template: QRポスターテンプレート
-        advertisement_template: テンプレート
+        advertisement_template: デザイン
         title: タイトル
         url: QR生成URL
         qr_image: デザインQR用画像アップロード
