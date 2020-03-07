@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: free_ad_production
-  username: free_ad
-  password: <%= ENV['FREE_AD_DATABASE_PASSWORD'] %>
+  database: coconimo_staging
+  username: admin
+  password: saunaikitai
+  socket: /var/lib/mysql/mysql.sock

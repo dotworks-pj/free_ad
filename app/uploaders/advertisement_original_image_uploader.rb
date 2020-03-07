@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AdvertisementQrImageUploader < BaseImageUploader
+class AdvertisementOriginalImageUploader < BaseImageUploader
   process resize_to_fit: [540, 360]
 
   version :thumb do
