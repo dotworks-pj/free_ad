@@ -52,3 +52,7 @@ NumericLiterals:
   MinDigits: 7
 Rails/BulkChangeTable:
   Enabled: false
+Style/GlobalVars:
+  Enabled: false
+Lint/HandleExceptions:
+  Enabled: false
