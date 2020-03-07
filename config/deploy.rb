@@ -41,7 +41,7 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 # set :ssh_options, verify_host_key: :secure
 
 # capistranoのバージョン固定
-lock '3.4.0'
+lock '3.12.0'
 
 # デプロイするアプリケーション名
 set :application, 'coconimo'
@@ -53,7 +53,7 @@ set :repo_url, 'git@github.com:dotworks-pj/free_ad.git'
 set :branch, 'master'
 
 # deploy先のディレクトリ。
-set :deploy_to, '/var/www/free_ad'
+set :deploy_to, '/var/www/rails/free_ad'
 
 # シンボリックリンクをはるファイル。(※後述)
 set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
